@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.tc.streaming.grpc";
+
+service user{
+ rpc login(LogInRequest) returns(APIResponse);
+ rpc logout(Empty) returns(APIResponse);
+}
+
+message LogInRequest{
+     string username = 1;
+     string password = 2;
+}
+
+message APIResponse{
+    string responsemessage = 1;
+    string responsecode = 2;
+}
+
+message Empty{
+}
+
